@@ -1,73 +1,69 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# MOA — ERP 시스템
 
-Currently, two official plugins are available:
+모든 것을 모아, 하나로 관리하는 ERP 시스템
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+의류·식품·생활용품 온라인 쇼핑몰의 인사·물류·회계·CS 업무를 통합 관리하는 풀스택 ERP 웹 애플리케이션입니다.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📌 프로젝트 개요
 
-## Expanding the ESLint configuration
+| 항목 | 내용 |
+|------|------|
+| 프로젝트명 | MOA ERP |
+| 참여자 | 박준, 김서진, 정윤아, 최성현 |
+| 유형 | 팀 프로젝트 (4인) |
+| 제작기간 | 2026.03.27 ~ 2026.05.06 |
+| 역할 | 로그인 / 메인페이지 / 마이페이지 / 영업 파트 |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 👩‍💻 담당 파트
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 🔐 로그인
+- 비밀번호 암호화 처리 후 DB 저장
+- 로그인 정보 Zustand 전역 상태 저장 및 관리
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 🏠 메인페이지
+- 출/퇴근 버튼 클릭 시 근무 시간 등록 (인사팀 근태에서 조회 가능)
+- 결재 현황 위젯 — 클릭 시 마이페이지 결재 현황으로 이동
+- 공지사항 조회 / 상세조회 / 등록 / 수정 / 삭제, 공지 상단 고정 기능
+- 일정 캘린더 상세조회 / 수정 / 삭제 및 마이페이지 이동
+- 매입·매출 현황 Recharts 그래프 시각화
+- 물류 입고현황 / 근태현황 바로가기 위젯
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 👤 마이페이지
+- 개인 정보 조회 및 관리
+- 신청한 결재 현황 리스트 조회
+- 월별 / 공유 / 개인 일정 캘린더 선택 조회
+- 일정 알림 설정 (10분 전 팝업 알림)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 💼 영업
+- 회계 거래 전표 조회 리스트
+- 전자세금계산서 필터 조회 (세금계산서 전표만 분류)
+- 월별 매입 / 매출 집계표
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## 🛠 기술 스택
+
+**Frontend**
+- React 19 / TypeScript
+- Zustand (전역 상태 관리)
+- TanStack Query (서버 상태 관리 및 캐싱)
+- Axios (API 통신)
+- Recharts (데이터 시각화)
+- React Router Dom
+- Vite
+
+**Backend**
+- Java / Spring Boot
+- JPA (Hibernate)
+- MySQL / PostgreSQL
+
+**협업 툴**
+- GitHub
+- Notion / Figma
+
+---
