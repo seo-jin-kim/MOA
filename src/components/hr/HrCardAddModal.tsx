@@ -117,7 +117,7 @@ const ROLE_OPTIONS: Record<string, RoleOption> = {
 
 const DEPARTMENT_QUERY_KEY = ["departmentOptions"] as const;
 const GRADE_QUERY_KEY = ["gradeOptions"] as const;
-const DEPARTMENT_API_BASE = "https://moa-server.onrender.com/api/base/dept";
+const DEPARTMENT_API_BASE = "/api/base/dept";
 const EXCLUDED_DEPARTMENT_KEYWORDS = ["이사회"];
 const HIDDEN_GRADE_KEYWORDS = ["부장", "상무", "부사장", "사장", "임원", "이사"];
 const CURRENT_YEAR = new Date().getFullYear();

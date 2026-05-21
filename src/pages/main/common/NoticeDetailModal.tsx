@@ -19,7 +19,7 @@ const NoticeDetailModal = ({noticeId, isOpen, onClose, onEdit, onSuccess }:Notic
     const [isDeleteOpen, setIsDeleteOpen] = useState(false);
 
     // const BASE_URL = "http://localhost/api";
-    const BASE_URL = "https://moa-server.onrender.com/api";
+    const BASE_URL = "/api";
     const user = useAuthStore(state => state.user);
 
     const{ data: selectedNotice } = useQuery<NoticeDetail>({

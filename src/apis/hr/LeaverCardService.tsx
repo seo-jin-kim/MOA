@@ -4,8 +4,8 @@ import axios from "axios";
 // const LEAVER_API_BASE = "http://localhost/api/hr/leavers";
 // const HR_CARD_API_BASE = "http://localhost/api/hr/cards";
 
-const LEAVER_API_BASE = "https://moa-server.onrender.com/api/hr/leavers";
-const HR_CARD_API_BASE = "https://moa-server.onrender.com/api/hr/cards";
+const LEAVER_API_BASE = "/api/hr/leavers";
+const HR_CARD_API_BASE = "/api/hr/cards";
 
 //아마존용
 // const LEAVER_API_BASE  = "http://3.34.125.146/api/hr/leavers";

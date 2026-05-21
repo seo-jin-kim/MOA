@@ -2,7 +2,7 @@ import axios from "axios";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 //  const API = "http://localhost/api/hr/cards";
-const API = "https://moa-server.onrender.com/api/hr/cards";
+const API = "/api/hr/cards";
 
 //아마존용
 // const API = "http://3.34.125.146/api/hr/cards";

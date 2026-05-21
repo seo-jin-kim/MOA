@@ -5,8 +5,8 @@ import axios from "axios";
 // const API_BASE = "http://localhost/api/hr/payroll";
 // const SALARY_API_BASE = "http://localhost/api/hr/salary";
 
-const API_BASE = "https://moa-server.onrender.com/api/hr/payroll";
-const SALARY_API_BASE = "https://moa-server.onrender.com/api/hr/salary";
+const API_BASE = "/api/hr/payroll";
+const SALARY_API_BASE = "/api/hr/salary";
 
 //아마존용
 // const API_BASE  = "http://3.34.125.146/api/hr/payroll";
@@ -15,7 +15,7 @@ const SALARY_API_BASE = "https://moa-server.onrender.com/api/hr/salary";
 
 const api = axios.create({
     // baseURL: "http://localhost/",
-    baseURL: "https://moa-server.onrender.com",
+    baseURL: "/",
     //아마존
     // baseURL : "http://3.34.125.146/",
     withCredentials: true,

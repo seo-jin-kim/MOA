@@ -2,7 +2,7 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 // const CERTIFICATES_CARD_API_BASE = "http://localhost/api/hr/certificates";
-const CERTIFICATES_CARD_API_BASE = "https://moa-server.onrender.com/api/hr/certificates";
+const CERTIFICATES_CARD_API_BASE = "/api/hr/certificates";
 
 //아마존용
 // const CERTIFICATES_CARD_API_BASE  = "http://3.34.125.146/api/hr/certificates";
