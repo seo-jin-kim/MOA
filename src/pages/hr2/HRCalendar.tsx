@@ -20,31 +20,41 @@ const HRCalendar = () => {
 
     const [events, setEvents] = useState<CalendarEvent[]>([]);
 
-    // 1️⃣ 날짜 선택
+    // 날짜 선택
     const [selectedDate, setSelectedDate] = useState<string | null>(null);
 
-    // 2️⃣ 리스트 모달
+    // 리스트 모달
     const [listOpen, setListOpen] = useState(false);
     const [listData, setListData] = useState<any[]>([]);
 
-    // 3️⃣ 상세 모달
+    // 상세 모달
     const [detailOpen, setDetailOpen] = useState(false);
     const [selectedId, setSelectedId] = useState<number | null>(null);
 
     useEffect(() => {
         const load = async () => {
-            const data = await getHr2Data(
-                (hr2Configs as any).calendar.apiUrl,
-                0,
-                100,
-                {}
-            );
-            setEvents(toCalendarEvents(data.content ?? data) as any);
+            try {
+                // 현재 날짜를 yyyy-MM 형식으로 포맷팅 (예: 2026-05)
+                const now = new Date();
+                const year = now.getFullYear();
+                const month = String(now.getMonth() + 1).padStart(2, '0');
+                const selectMonth = `${year}-${month}`;
+
+                const data = await getHr2Data(
+                    "calendar",
+                    0,
+                    100,
+                    { selectMonth }
+                );
+
+                setEvents(toCalendarEvents(data) as any);
+            } catch (error) {
+                console.error("캘린더 데이터 로드 실패:", error);
+            }
         };
 
         load();
     }, []);
-
     // 캘린더 클릭 → 날짜 기준 리스트
     const handleDateClick = async (id: number) => {
         setSelectedDate(String(id));

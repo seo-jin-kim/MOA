@@ -1,14 +1,9 @@
-/* css마지막에 */
-
-
-
-
 /* ----------헤더css----------- */
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
 
 .header-container {
     width: 100%;
-    height: 48px;
+    min-height: 48px;
     background-color: #ffffff;
     border-bottom: 1px solid #e5e7eb;
     display: flex;
@@ -16,7 +11,14 @@
     justify-content: space-between;
     padding: 0 33px;
     box-sizing: border-box;
-    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    position: relative;
+    font-family: "Pretendard Variable", sans-serif;
+}
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 215px;
+    z-index: 10;
 }
 
 .header-logo {
@@ -31,9 +33,12 @@
 .header-nav {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
-
+.header-Open{display: flex; justify-content: center; align-items: center}
 .header-nav-item {
     background: none;
     border: none;
@@ -45,6 +50,11 @@
     white-space: nowrap;
 }
 
+.header-nav-item:after{
+    padding-right: 100px;
+    margin-right: 200px;
+}
+
 .header-nav-item:hover {
     color: #4D4B62;
 }
@@ -52,7 +62,171 @@
 /* --------------------------- */
 
 /* --------사이드바css--------- */
+/* 사이드바 전체 컨테이너 */
+.sidebar {
+    width:273px;
+    height: calc(100vh - 48px);
+    background: #5E5C77;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    transition: width 0.3s ease;
+    flex-shrink: 0;
+}
+/* 상단 알림 바 */
+.sidebar-notification{
+    padding: 12px 15px;
+    height: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: #4D4B62;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    gap: 8px;
+}
+.notifi-bell {
+    font-size: 16px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+.notif-text {
+    font-size: 12px;
+}
+.notif-dot {
+    color: #DA5C57;
+    font-size: 10px;
+    margin-left: auto;
+}
 
+.sidebar-user-card{
+    height: 45px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.user-avatar-circle {
+    width: 42px;
+    height: 42px;
+    background-color: #D9D9D9;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+}
+.user-info-detail {
+    flex: 1;
+}
+
+.user-name-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+.u-name {
+    font-size: 14px;
+    font-weight: 300;
+}
+.u-sub-info {
+    font-size: 12px;
+    opacity: 0.6;
+    margin: 0;
+    font-weight: 100;
+}
+
+.icon-arrow-right {
+    font-size: 10px;
+    opacity: 0.5;
+}
+
+.side-menu-List {
+    flex: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+}
+
+.group-Title {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-weight: 300;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.group-Title:hover, .group-Title.is-Active {
+    background-color: #4D4B62;
+    cursor: pointer;
+}
+
+.icon-Arrow {
+    font-size: 12px;
+    width: 15px;
+}
+
+.sub-menu-List {
+    list-style: none;
+    padding: 0;
+
+}
+
+.sub-menu-Item {
+    font-weight: 200;
+    padding: 8px 10px 8px 40px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: all 0.2s;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #5E5C77;
+    color: #fff;
+}
+.sub-menu-Item.is-Active{
+    background-color: rgb(79 77 101 / 0.78);
+    }
+.sub-menu-Item:hover {
+    background-color: #4D4B62;
+    opacity: 1;
+}
+
+.sidebar-footer {
+    height: 52px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background-color: #65627E;
+    flex-shrink: 0;
+}
+
+.sidebar-footer:hover {
+    background-color: #4D4B62;
+}
+
+.sidebar-footer span:first-child {
+    font-size: 14px;
+    font-weight: 300;
+    white-space: nowrap;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.icon-logout {
+    font-size: 20px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+}
 /* --------------------------- */
 
 .main{
@@ -65,4 +239,173 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+.main-home {
+    flex: 1;
+    position: relative;
+    min-height: 0;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 1024px) {
+    /*.header-nav{display: none;}*/
+        /*    .header-container {*/
+        /*        padding: 0 20px;*/
+        /*    }*/
+        /*    .header-nav {*/
+        /*        gap: 20px;*/
+        /*    }*/
+        /*    .sidebar { width: 200px; }*/
+        /*}*/
+}
+/*@media (max-width: 768px) {*/
+
+/*    !*.header-nav {*!*/
+/*    !*    position: static;*!*/
+/*    !*    transform: none;*!*/
+/*    !*    left: auto;*!*/
+
+/*    !*    display: flex;*!*/
+/*    !*    gap: 15px;*!*/
+/*    !*}*!*/
+
+/*    !*.header-nav-item {*!*/
+/*    !*    font-size: 13px; !* 글자 크기 축소 *!*!*/
+/*    !*}*!*/
+
+
+/*    !*.sidebar {*!*/
+/*    !*    width: 145px;*!*/
+/*    !*}*!*/
+
+/*    !*!* 모바일에서 글자 크기 조정 *!*!*/
+/*    !*.group-Title { padding: 12px; font-size: 13px; }*!*/
+/*}*/
+
+
+
+
+/* 사이드바 */
+.header-hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.sidebar-main-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+}
+
+.sidebar-main-item {
+    padding: 11px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 300;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    transition: background 0.2s;
+}
+
+.sidebar-main-item:hover,
+.sidebar-main-item.is-Active {
+    background-color: #4D4B62;
+}
+
+.sidebar-sub-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-sub-item {
+    padding: 9px 16px 9px 28px;
+    font-size: 13px;
+    font-weight: 300;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    background: var(--color-primary);
+    display: flex;
+    align-items: center;
+    transition: background 0.2s;
+}
+
+.sidebar-sub-item:hover,
+.sidebar-sub-item.is-Active {
+    background-color: #4D4B62;
+}
+
+.sidebar-leaf-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-leaf-item {
+    padding: 8px 16px 8px 44px;
+    font-size: 12px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--color-primary);
+    opacity: 0.85;
+    transition: all 0.2s;
+}
+
+.sidebar-leaf-item:hover {
+    opacity: 1;
+    background-color: #4D4B62;
+}
+
+@media (max-width: 768px) {
+    .header-nav { display: none; }
+
+    .header-hamburger {
+        display: flex;
+        align-items: center;
+    }
+
+    .sidebar {
+        position: fixed;
+        right: -273px;
+        top: 0;
+        left: auto;
+        height: 100vh;
+        z-index: 1000;
+        transition: right 0.3s ease;
+        width: 273px !important;
+        font-weight: 300;
+    }
+    .side-menu-List {
+        display: none;
+    }
+    .sidebar.sidebar-open { right: 0; }
+    .sidebar-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 999;
+    }
+    .sub-menu-Item.is-Active {
+        background-color: rgb(79 77 101 / 0.78);
+        opacity: 1;
+    }
+
+    .sidebar-leaf-item.is-Active {
+        opacity: 1;
+        background-color: rgb(79 77 101 / 0.78);
+    }
+}
+
+@media (max-width: 410px) {
+
+    .sidebar {
+        width: 211px !important;
+    }
+
 }

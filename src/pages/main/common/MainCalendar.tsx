@@ -9,6 +9,7 @@ import {useNavigate} from "react-router";
 import {useState} from "react";
 import CalendarDetailModal from "../../mypage/CalendarDetailModal.tsx";
 import CalendarWriteModal from "../../mypage/CalendarWriteModal.tsx";
+import {useAuthStore} from "../../../stores/useAuthStore.tsx";
 
 const categoryStyles: Record<string, {bg: string, dot: string}> = {
 
@@ -23,6 +24,7 @@ const categoryStyles: Record<string, {bg: string, dot: string}> = {
 const MainCalendar = () => {
 
     const navigate = useNavigate();
+    const { setActiveMenu } = useAuthStore();
     const [isDetailOpen, setIsDetailOpen] = useState(false);
     const [isWriteOpen, setIsWriteOpen] = useState(false);
     const [editId, setEditId] = useState<number | null>(null);
@@ -47,7 +49,10 @@ const MainCalendar = () => {
                     <BiLinkExternal
                         size={16}
                         color="#d0d0d0"
-                        onClick={() => navigate("/my/calendars")}
+                        onClick={() => {
+                            setActiveMenu(2);
+                            navigate("/my/calendars");
+                        }}
                     />
                     <MdRefresh
                         size={19}

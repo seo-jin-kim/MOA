@@ -4,6 +4,7 @@
     gap: var(--spacing-sm);
     font-size: var(--font-xs);
     height: 100%;
+    overflow-x: auto;
 }
 .myCalendar-Side{
     width: 220px;
@@ -13,10 +14,12 @@
     height: auto;
     padding: 15px 18px;
     border: 1px solid var(--border);
+    flex-shrink: 0;
 }
 .myCalendar-Main{
     height: 100%;
-    width: 1170px;
+    width: 1080px;
+    flex-shrink: 0;
 }
 .myCalendar-Year{
     background: var(--color-primary-light);
@@ -86,13 +89,9 @@
 
 @media (max-width: 1620px) {
     .myCalendar-Wrapper {
-        min-width: 1200px;
     }
 
-    .myCalendar-Main {
-        min-width: 0;
-        height: auto;
-    }
+
     .myCalendar-Side{
         min-height: 52vh;
     }

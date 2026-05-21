@@ -127,7 +127,7 @@ export const hr2Configs = {
         // 표(Table)에 보여줄 컬럼들
         columns: [
             { key: "approvaDate", label: "일자", render: renderDate },
-            { key: "approvaId", label: "문서번호", clickable: true },
+            { key: "approvaId", label: "문서번호"},
             { key: "approvaTitle", label: "제목" },
             { key: "writer", label: "기안자" },
             { key: "documentName", label: "구분" },
@@ -156,7 +156,7 @@ export const hr2Configs = {
     calendar: {
         hasCrud: true,
         title: "출/퇴근기록부",
-        apiUrl: "/api/hr/attendances/calendar",
+        apiUrl: "/api/hr/attendances/calendar-data",
         idKey: "workId",
         tap: [{id: "departmentId", label: "팀별", type: "groupButton", option: []}],
         count: [{key: "totalCount", label: "date", clickable: true}],

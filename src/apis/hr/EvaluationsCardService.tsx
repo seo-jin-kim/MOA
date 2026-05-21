@@ -1,8 +1,11 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
-const EVALUATIONS_CARD_API_BASE = "http://localhost/api/hr/evaluations";
-// const EVALUATIONS_CARD_API_BASE = "https://moa-server.onrender.com/api/hr/evaluations";
+// const EVALUATIONS_CARD_API_BASE = "http://localhost/api/hr/evaluations";
+const EVALUATIONS_CARD_API_BASE = "/api/hr/evaluations";
+
+//아마존용
+// const EVALUATIONS_CARD_API_BASE  = "http://3.34.125.146/api/hr/evaluations";
 
 export type EvaluationsCardRecord = {
     userId?: number;

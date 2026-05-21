@@ -16,6 +16,7 @@ const SalesJournals = () => {
     const {data: transactions =[], refetch} = useQuery<Transaction[], Error, Transaction[]>({
         queryKey:["transactions"],
         queryFn:getTransactionsApi,
+         select: (data: any) => data.content,
     });
 
     const columns: TableColumn<Transaction>[] = [

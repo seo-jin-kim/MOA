@@ -1,8 +1,11 @@
 import { useQuery , useMutation } from "@tanstack/react-query";
 import axios from "axios";
 
- const Api_BASE = "http://localhost/api/inventory/";
-// const Api_BASE = "https://moa-server.onrender.com/api/inventory/";
+//  const Api_BASE = "http://localhost/api/inventory/";
+const Api_BASE = "/api/inventory/";
+
+//아마존용
+// const Api_BASE = "http://3.34.125.146/api/inventory/";
 
   // 조회 및 검색
   export function useGetInventory( search?: string , page? : number  ,  size? : number ) {

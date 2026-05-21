@@ -129,7 +129,7 @@ export const baseConfigs = {
         ]
     },
     document: {
-        title: "공통양식리스트",
+        title: "공통양식",
         apiUrl: "/api/base/form",
         idKey: "documentId",
         // 표(Table)에 보여줄 컬럼들
@@ -175,7 +175,7 @@ export const baseConfigs = {
                 label: "사용여부",
                 align:"center",
                 type: "select",
-                options: [{ label: "사용", value: 1 }, { label: "미사용", value: 0 }],
+                options: [{ label: 1, value: "사용" }, { label: 0, value: "미사용" }],
                 render: renderUseStatus
             }
         ]

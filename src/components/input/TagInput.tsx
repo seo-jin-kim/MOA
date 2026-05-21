@@ -55,6 +55,7 @@ const TagInput = ({selectedIds, members, onRemove, onClear, onClick, disabled = 
             >
                 {selectedIds.slice(0, maxVisible).map(id => {
                     const member = members.find(m => m.userId === id);
+                    if (!member) return null;
                     return (
                         <span
                             key={id}

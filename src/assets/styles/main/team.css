@@ -117,3 +117,96 @@
         height: auto;
     }
 }
+
+.team-Table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+    border:1px solid var(--border);
+    height: 503px;
+    overflow-y: auto;
+    display: block;
+    overflow-x:hidden;
+}
+
+.common-Table.team-Table thead{
+    background: var(--color-gray-100);
+    border-top: 1px solid var(--border-dark);
+    border-bottom: 1px solid var(--border);
+}
+.common-Table.team-Table thead tr th{
+    padding: 6px 8px;
+    font-size: var(--font-xs);
+    font-weight: 500;
+    border-right: 1px solid var(--border);
+    color: var(--text-secondary);
+}
+.common-Table.team-Table thead, .team-Table tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+.team-Table thead tr th:nth-child(1), .team-Table tbody tr td:nth-child(1){
+    width: 10%;
+}
+.team-Table thead tr th:nth-child(2),.team-Table tbody tr td:nth-child(2){
+    width: 8%;
+    text-align: center;
+}
+.team-Table thead tr th:nth-child(3),.team-Table tbody tr td:nth-child(3){
+    width: 20%;
+    text-align: center;
+}
+.team-Table thead tr th:nth-child(4),.team-Table tbody tr td:nth-child(4){
+    width: 10%;
+    text-align: center;
+}
+.team-Table thead tr th:last-child{
+    border-right: none;
+}
+.team-Table tbody tr{
+    border-bottom: 1px solid var(--border);
+}
+.team-Table tbody tr:hover{
+    background: var(--color-primary-light);
+}
+.common-Table.team-Table tbody tr td{
+    padding: 7px 8px;
+    font-size: var(--font-xs);
+    font-weight: 300;
+    color: var(--text-primary);
+    border-right: 1px solid var(--border);
+}
+.team-Table tbody tr td:last-child{
+    border-right: none;
+}
+
+.team-Table.logisticsTeam thead tr th:nth-child(1),
+.team-Table.logisticsTeam tbody tr td:nth-child(1) {
+    width: 10%;
+}
+.team-Table.logisticsTeam thead tr th:nth-child(2),
+.team-Table.logisticsTeam tbody tr td:nth-child(2) {
+    width: 8%;
+}
+
+.team-Table.logisticsTeam tbody tr td:nth-child(2) {
+    text-align: left;
+}
+
+@media (max-width: 1024px) {
+    .team-Table {
+        height: auto;
+        max-height: 300px;
+    }
+
+    .logisticsTeam {
+        height: auto;
+        max-height: 290px;
+    }
+
+    .notice-IsLoading {
+        height: auto;
+        min-height: 280px;
+    }
+}

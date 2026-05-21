@@ -7,7 +7,12 @@ import {useAuthStore} from "../../../stores/useAuthStore.tsx";
 const ApprovalCard = () => {
 
     const navigate = useNavigate();
-    const {user} = useAuthStore();
+    const { user, setActiveMenu } = useAuthStore();
+
+    const goToApprovals = () => {
+        setActiveMenu(2);
+        navigate("/my/approvals");
+    };
 
     const {data, refetch} = useGetApprovaUserList(user?.userId ?? 0, "", 0, 100);
 
@@ -25,15 +30,15 @@ const ApprovalCard = () => {
                 />
             </div>
             <div className="card-Inner approvalCard-Inner">
-                <button className="approval-Item" onClick={() => navigate("/my/approvals")}>
+                <button className="approval-Item" onClick={goToApprovals}>
                     <span>진행중</span>
                     <span>{waiting}건</span>
                 </button>
-                <button className="approval-Item" onClick={() => navigate("/my/approvals")}>
+                <button className="approval-Item" onClick={goToApprovals}>
                     <span>반려</span>
                     <span>{rejected}건</span>
                 </button>
-                <button className="approval-Item" onClick={() => navigate("/my/approvals")}>
+                <button className="approval-Item" onClick={goToApprovals}>
                     <span>결재</span>
                     <span>{done}건</span>
                 </button>

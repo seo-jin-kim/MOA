@@ -2,6 +2,7 @@ import {BiLinkExternal} from "react-icons/bi";
 import {MdRefresh} from "react-icons/md";
 import React from "react";
 import {useNavigate} from "react-router";
+import {useAuthStore} from "../../../stores/useAuthStore.tsx";
 
 interface TeamLayoutProps{
     children?:React.ReactNode;
@@ -12,6 +13,16 @@ interface TeamLayoutProps{
 const TeamLayout = ({children, title, linkTo, onRefresh}:TeamLayoutProps) => {
 
     const navigate = useNavigate();
+    const { setActiveMenu } = useAuthStore();
+
+    const handleLink = () => {
+        if (!linkTo) return;
+        if (linkTo.startsWith('/hr')) setActiveMenu(5);
+        else if (linkTo.startsWith('/inventory')) setActiveMenu(6);
+        else if (linkTo.startsWith('/sales')) setActiveMenu(7);
+        else if (linkTo.startsWith('/my')) setActiveMenu(2);
+        navigate(linkTo);
+    };
     return(
         <>
             <div className="team-Header">
@@ -21,7 +32,7 @@ const TeamLayout = ({children, title, linkTo, onRefresh}:TeamLayoutProps) => {
                         <BiLinkExternal
                             size={16}
                             color="#d0d0d0"
-                            onClick={() => navigate(linkTo)}
+                            onClick={handleLink}
                         />
                     )}
                     {onRefresh && (

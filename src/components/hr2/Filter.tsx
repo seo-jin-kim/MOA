@@ -120,7 +120,7 @@ const Filter = ({ apiType, onFilter }: FilterProps) => {
 
 
     return (
-        <div className="filter-container" style={{display:"flex",gap:"12px", background:"#fff", padding:" 15px 12px", borderRadius:"15px"}}>
+        <div className="filter-container" style={{display:"flex",gap:"12px", background:"#fff", padding:" 15px 12px", borderRadius:"15px", flexWrap:"wrap"}}>
             {/* 1. 무조건 있는 날짜 컴포넌트 */}
             <div style={{ display: "flex", alignItems: "center", gap: "8px" , fontSize:"12px"}}>
                 <FilterDate

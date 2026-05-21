@@ -4,13 +4,13 @@ import {hr2Configs} from "../../types/hr2Configs.tsx";
 
 const api = axios.create({
     //  baseURL: "http://localhost/",
-    baseURL: "https://moa-server.onrender.com/",
+    baseURL: "/",
     withCredentials: true,
 });
 
 export const getHr2Data = async (path: keyof typeof hr2Configs, page = 0, size = 15, filterDTO: any) => {
     const realUrl = hr2Configs[path].apiUrl;
-
+    console.log("전달된 apiType:", realUrl);
     const { data } = await api.get(`${realUrl}`,{
         params: {
             page,

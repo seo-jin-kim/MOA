@@ -1,5 +1,4 @@
 .mainPage-Wrapper{
-    width: 100%;
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -106,7 +105,7 @@
     .mainPage-Wrapper {
         grid-template-columns: 1fr;
         height: auto;
-        min-width: unset;
+        width: 100%;
     }
     .main-Card {
         height: auto;

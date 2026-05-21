@@ -1,4 +1,4 @@
-import {Route, Routes} from 'react-router-dom';
+import {useNavigate, useLocation , Route, Routes} from 'react-router-dom';
 import MainLayout from './components/layout/MainLayout';
 import Login from './pages/Login';
 import {useAuthStore} from "./stores/useAuthStore.tsx";
@@ -29,19 +29,34 @@ import MyRoutes from "./routes/MyRoutes.tsx";
 import HRCalendar from './pages/hr2/HRCalendar.tsx';
 
 
-
 const App = () => {
     const { login } = useAuthStore();
     const [isLoading, setIsLoading] = useState(true)
+    
+  
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    useEffect(() => {
+    fetch('/api/')
+        .then(() => console.log('서버가 깨어났습니다.'))
+        .catch(err => console.error('깨우기 실패:', err));
+    }, []);
+
 
     useEffect(()=>{
         authCheck()
             .then((data) => {
                 login(data);
+                 if (location.pathname === "/") {
+                    navigate("/", { replace: true });
+                }
             })
             .catch((error)=>{
                 if(axios.isAxiosError(error) && error.response?.status === 401) {
-                    //
+                    if (location.pathname !== "/") {
+                     navigate("/", { replace: true });
+                    }
                 }else{
                     console.error("authCheck error",error);
                 }
@@ -49,9 +64,9 @@ const App = () => {
             .finally(()=>{
                 setIsLoading(false)
             });
-    },[login]);
+    },[login, navigate, location.pathname]);
 
-    if (isLoading) return null;
+    if (isLoading) return <span>로딩중</span>;
 
     return (
     <>

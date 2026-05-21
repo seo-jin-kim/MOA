@@ -1,8 +1,11 @@
 import { useQuery , useMutation  } from "@tanstack/react-query";
 import axios from "axios";
 
- const Api_BASE = "http://localhost/api/gw/";
-// const Api_BASE = "https://moa-server.onrender.com/api/gw/";
+//  const Api_BASE = "http://localhost/api/gw/";
+const Api_BASE = "/api/gw/";
+
+//아마존용
+// const Api_BASE = "http://3.34.125.146/api/gw";
 
 // 내 결재내역 조회 완료
 export function useGetApprovaUserList(  writer : number , search?: string , page? : number  ,  size? : number ) {

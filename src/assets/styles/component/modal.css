@@ -66,7 +66,9 @@
 }
 }@media (max-width: 768px) {
     .modal-Container {
-        min-width: 590px;
+        width: 95%;
+        min-width: unset;
+        height: 90vh;
     }
 
 }

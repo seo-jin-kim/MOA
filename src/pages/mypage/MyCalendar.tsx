@@ -60,7 +60,7 @@ const MyCalendar = () => {
                 <FaStar size={18} color="#C4C4C4"/>
                 <span>일정관리</span>
             </div>
-            <div style={{overflowX: "auto"}}>
+            <div>
                 <div className="myCalendar-Wrapper">
                     <div className="myCalendar-Side">
                         <div className="myCalendar-Year">

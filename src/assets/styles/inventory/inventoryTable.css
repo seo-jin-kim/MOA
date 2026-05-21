@@ -246,13 +246,13 @@
   cursor: pointer;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
     .common-Table-Wrapper {
         overflow-x: auto;
     }
 
     .common-Table-Wrapper .common-Table {
-        min-width: 900px;
+        min-width: 1000px;
     }
 
     .inventory-Table-Wrapper {
@@ -260,6 +260,6 @@
     }
 
     .inventory-Table-Wrapper .inventory-table {
-        min-width: 900px;
+        min-width: 1000px;
     }
 }

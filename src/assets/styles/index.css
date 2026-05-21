@@ -320,7 +320,8 @@ button {
   font-size: var(--font-xs);
   padding: 6px 8px;
 }
-
+@media (max-width: 768px) {
+}
 
 /*------------ 파일 입력창--------------- */
 
@@ -493,11 +494,11 @@ button {
   z-index: 100;
 }
 
-@media (max-width: 767px) {
-  body {
-    overflow: hidden;
-  }
-}
+/*@media (max-width: 767px) {*/
+/*  body {*/
+/*    overflow: hidden;*/
+/*  }*/
+/*}*/
 
 
 .group-button-filter button {

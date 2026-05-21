@@ -18,7 +18,7 @@ const CalendarDetailModal = ({calendarId, isOpen, onClose, onEdit, onSuccess }:C
 
     const [isDeleteOpen, setIsDeleteOpen] = useState(false);
 
-    const BASE_URL = "http://localhost/api";
+    const BASE_URL = "/api";
     const user = useAuthStore((state:AuthState) => state.user);
 
     const{ data: calendar } = useQuery<CalendarEvent>({
